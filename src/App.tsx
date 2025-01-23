@@ -1,11 +1,19 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import { AuthProvider } from './contexts/AuthContext';
+import { CartProvider } from './contexts/CartContext';
+import { AppRoutes } from './components/AppRoutes';
 
-function App() {
+export function App() {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <p>Start prompting (or editing) to see magic happen :)</p>
-    </div>
+    <BrowserRouter>
+      <AuthProvider>
+        <CartProvider>
+          <AppRoutes />
+          <Toaster position="top-right" />
+        </CartProvider>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
-
-export default App;

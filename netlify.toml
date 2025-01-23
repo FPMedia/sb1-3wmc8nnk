@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"            # or yarn build, whichever you use
+  publish = "dist"                     # the folder Vite outputs to after build
+
+[functions]
+  directory = "netlify/functions"      # location of your Netlify Functions
